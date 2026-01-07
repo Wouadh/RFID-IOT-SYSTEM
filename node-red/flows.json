@@ -1,0 +1,890 @@
+[
+    {
+        "id": "f5f08b1f5f22144d",
+        "type": "tab",
+        "label": "Lecteur/Éditeur RFID",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2e04130b.0874bc",
+        "type": "ui_tab",
+        "name": "LECTURE",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "1d803c73.053e14",
+        "type": "mqtt-broker",
+        "name": "Mosquitto Public",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true
+    },
+    {
+        "id": "e8e81c01.1923e",
+        "type": "ui_group",
+        "name": "1. Configuration Cible",
+        "tab": "2e04130b.0874bc",
+        "order": 1,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c620e7d5.19b918",
+        "type": "ui_group",
+        "name": "3. Données Lues & Statut",
+        "tab": "2e04130b.0874bc",
+        "order": 2,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d8b7129e9cae4c7f",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "f7bbfb7835897604",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.4.1",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "6ba6047489a5113b",
+        "type": "ui_tab",
+        "name": "ECRITURE",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "427d2e5a83571ccd",
+        "type": "ui_group",
+        "name": "configuration cible",
+        "tab": "6ba6047489a5113b",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9d9b3cb096ff9a6b",
+        "type": "ui_group",
+        "name": "statut",
+        "tab": "2e04130b.0874bc",
+        "order": 3,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "32626bdec289666b",
+        "type": "ui_group",
+        "name": "statut",
+        "tab": "6ba6047489a5113b",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a2431d1f.f0605",
+        "type": "ui_group",
+        "name": "2. Données à Écrire",
+        "tab": "6ba6047489a5113b",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1bb6b4da2b6db036",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a907a3c3.b739e",
+        "type": "ui_numeric",
+        "z": "f5f08b1f5f22144d",
+        "name": "",
+        "label": "Numéro de Secteur (0-15) [lecture]",
+        "tooltip": "",
+        "group": "e8e81c01.1923e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "15",
+        "step": 1,
+        "className": "",
+        "x": 180,
+        "y": 400,
+        "wires": [
+            [
+                "27a05198f1792710"
+            ]
+        ]
+    },
+    {
+        "id": "a502446f.d87878",
+        "type": "ui_text_input",
+        "z": "f5f08b1f5f22144d",
+        "name": "",
+        "label": "Clé A [lecture]",
+        "tooltip": "",
+        "group": "e8e81c01.1923e",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "password",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 700,
+        "y": 460,
+        "wires": [
+            [
+                "cbf4e3023448db24"
+            ]
+        ]
+    },
+    {
+        "id": "e0b0e513.7c1328",
+        "type": "ui_text_input",
+        "z": "f5f08b1f5f22144d",
+        "name": "",
+        "label": "Données Texte (32 car. max)",
+        "tooltip": "",
+        "group": "a2431d1f.f0605",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 140,
+        "y": 540,
+        "wires": [
+            [
+                "c98233f2.327f1"
+            ]
+        ]
+    },
+    {
+        "id": "c98233f2.327f1",
+        "type": "change",
+        "z": "f5f08b1f5f22144d",
+        "name": "Stocker Texte",
+        "rules": [
+            {
+                "t": "set",
+                "p": "data_input_text",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e708779b.18c0c8",
+        "type": "ui_text_input",
+        "z": "f5f08b1f5f22144d",
+        "name": "",
+        "label": "Valeur Numérique",
+        "tooltip": "",
+        "group": "a2431d1f.f0605",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 150,
+        "y": 600,
+        "wires": [
+            [
+                "b1b88e1e.e7e72"
+            ]
+        ]
+    },
+    {
+        "id": "b1b88e1e.e7e72",
+        "type": "change",
+        "z": "f5f08b1f5f22144d",
+        "name": "Stocker Nombre",
+        "rules": [
+            {
+                "t": "set",
+                "p": "data_input_number",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f5f7e716.c2b878",
+        "type": "ui_button",
+        "z": "f5f08b1f5f22144d",
+        "name": "",
+        "group": "a2431d1f.f0605",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Écrire sur le Secteur",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 160,
+        "y": 240,
+        "wires": [
+            [
+                "bd9c5513.754a68"
+            ]
+        ]
+    },
+    {
+        "id": "bd9c5513.754a68",
+        "type": "function",
+        "z": "f5f08b1f5f22144d",
+        "name": "Préparer JSON Écriture",
+        "func": "let sector = Number(flow.get(\"secteur\") ?? 0);\nlet keyA = (flow.get(\"cle\") ?? \"FFFFFFFFFFFF\").toString().trim().toUpperCase();\nlet text_data = (flow.get(\"data_input_text\") ?? \"\").toString();\nlet number_data = parseFloat(flow.get(\"data_input_number\") ?? 0);\n\nif (!/^[0-9A-F]{12}$/.test(keyA)) keyA = \"FFFFFFFFFFFF\";\nif (isNaN(sector)) sector = 0;\nsector = Math.max(0, Math.min(15, sector));\nif (isNaN(number_data)) number_data = 0;\n\nmsg.payload = {\n    action: \"write_sector\",\n    sector: sector,\n    keyA: keyA,\n    text: text_data.substring(0, 32),\n    number: number_data\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 240,
+        "wires": [
+            [
+                "json-converter"
+            ]
+        ]
+    },
+    {
+        "id": "a9a3b83c.a7e718",
+        "type": "ui_button",
+        "z": "f5f08b1f5f22144d",
+        "name": "",
+        "group": "c620e7d5.19b918",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Lire le Secteur",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 140,
+        "y": 300,
+        "wires": [
+            [
+                "a19a9df5.5976b"
+            ]
+        ]
+    },
+    {
+        "id": "a19a9df5.5976b",
+        "type": "function",
+        "z": "f5f08b1f5f22144d",
+        "name": "Préparer JSON Lecture",
+        "func": "let sector = Number(flow.get(\"secteur\") ?? 0);\nlet keyA = (flow.get(\"cle\") ?? \"FFFFFFFFFFFF\").toString().trim().toUpperCase();\n\n\n// Validation cle\nif (!/^[0-9A-F]{12}$/.test(keyA)) keyA = \"FFFFFFFFFFFF\";\n\n// Clamp secteur 0..15\nif (isNaN(sector)) sector = 0;\nsector = Math.max(0, Math.min(15, sector));\n\nmsg.payload = {\n    \"action\": \"read_sector\", \n    \"sector\": sector,\n    \"keyA\": keyA\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 300,
+        "wires": [
+            [
+                "json-converter"
+            ]
+        ]
+    },
+    {
+        "id": "json-converter",
+        "type": "json",
+        "z": "f5f08b1f5f22144d",
+        "name": "Convertir en JSON",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 670,
+        "y": 280,
+        "wires": [
+            [
+                "mqtt-out-command",
+                "debug-sent"
+            ]
+        ]
+    },
+    {
+        "id": "mqtt-out-command",
+        "type": "mqtt out",
+        "z": "f5f08b1f5f22144d",
+        "name": "Vers ESP32",
+        "topic": "iot/projet/rfid/commande",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1bb6b4da2b6db036",
+        "x": 910,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "debug-sent",
+        "type": "debug",
+        "z": "f5f08b1f5f22144d",
+        "name": "Message Envoyé",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 870,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "mqtt-in-status",
+        "type": "mqtt in",
+        "z": "f5f08b1f5f22144d",
+        "name": "Statut",
+        "topic": "iot/projet/rfid/status",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "1bb6b4da2b6db036",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 610,
+        "y": 60,
+        "wires": [
+            [
+                "ui-status-text",
+                "db2ef764dfa10ad6"
+            ]
+        ]
+    },
+    {
+        "id": "ui-status-text",
+        "type": "ui_text",
+        "z": "f5f08b1f5f22144d",
+        "group": "32626bdec289666b",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Statut du Système onglet ecriture",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 880,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "mqtt-in-uid",
+        "type": "mqtt in",
+        "z": "f5f08b1f5f22144d",
+        "name": "UID",
+        "topic": "iot/projet/rfid/iud",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "1bb6b4da2b6db036",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 40,
+        "wires": [
+            [
+                "ui-uid-text",
+                "c214bb0008a019e4"
+            ]
+        ]
+    },
+    {
+        "id": "ui-uid-text",
+        "type": "ui_text",
+        "z": "f5f08b1f5f22144d",
+        "group": "32626bdec289666b",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Dernier UID Scanné onglet ecriture",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 400,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "f572c842.2e93a8",
+        "type": "ui_text",
+        "z": "f5f08b1f5f22144d",
+        "group": "c620e7d5.19b918",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Texte Lu (Blocs 0+1)",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 440,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "b304d98a.d34d58",
+        "type": "mqtt in",
+        "z": "f5f08b1f5f22144d",
+        "name": "Réponse Texte",
+        "topic": "iot/projet/rfid/response_text",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "1bb6b4da2b6db036",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 140,
+        "wires": [
+            [
+                "f572c842.2e93a8"
+            ]
+        ]
+    },
+    {
+        "id": "d0421e49.0e90c",
+        "type": "ui_gauge",
+        "z": "f5f08b1f5f22144d",
+        "name": "",
+        "group": "c620e7d5.19b918",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Valeur Numérique Lue",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 980,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "e4f8d55a.b3d398",
+        "type": "mqtt in",
+        "z": "f5f08b1f5f22144d",
+        "name": "Réponse Nombre",
+        "topic": "iot/projet/rfid/response_number",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "1bb6b4da2b6db036",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 740,
+        "y": 140,
+        "wires": [
+            [
+                "d0421e49.0e90c"
+            ]
+        ]
+    },
+    {
+        "id": "9d1924bc5a36cf13",
+        "type": "ui_numeric",
+        "z": "f5f08b1f5f22144d",
+        "name": "",
+        "label": "Numéro de Secteur (0-15) [ecriture]",
+        "tooltip": "",
+        "group": "427d2e5a83571ccd",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "15",
+        "step": 1,
+        "className": "",
+        "x": 160,
+        "y": 460,
+        "wires": [
+            [
+                "27a05198f1792710"
+            ]
+        ]
+    },
+    {
+        "id": "27a05198f1792710",
+        "type": "change",
+        "z": "f5f08b1f5f22144d",
+        "name": "Stocker Secteur",
+        "rules": [
+            {
+                "t": "set",
+                "p": "secteur",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c214bb0008a019e4",
+        "type": "ui_text",
+        "z": "f5f08b1f5f22144d",
+        "group": "9d9b3cb096ff9a6b",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Dernier UID Scanné onglet lecture",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 400,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "c60997781e09a8cb",
+        "type": "ui_text_input",
+        "z": "f5f08b1f5f22144d",
+        "name": "",
+        "label": "Clé A [ecriture]",
+        "tooltip": "",
+        "group": "427d2e5a83571ccd",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "password",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 700,
+        "y": 520,
+        "wires": [
+            [
+                "cbf4e3023448db24"
+            ]
+        ]
+    },
+    {
+        "id": "cbf4e3023448db24",
+        "type": "change",
+        "z": "f5f08b1f5f22144d",
+        "name": "Stocker Clé",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cle",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 950,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "db2ef764dfa10ad6",
+        "type": "ui_text",
+        "z": "f5f08b1f5f22144d",
+        "group": "9d9b3cb096ff9a6b",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Statut du Système onglet lecture",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 910,
+        "y": 20,
+        "wires": []
+    }
+]
