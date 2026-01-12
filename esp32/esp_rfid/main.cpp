@@ -1,12 +1,12 @@
-#include <Arduino.h>
-#include <SPI.h>
-#include <MFRC522.h>
-#include <WiFi.h>
-#include <PubSubClient.h>
-#include <ArduinoJson.h>
-#include <WebServer.h>
-#include <ESPmDNS.h>
-#include "mbedtls/aes.h"   // AES-128 sur ESP32
+#include <Arduino.h>       // Bibliothèque principale Arduino 
+#include <SPI.h>           // Protocole de communication SPI
+#include <MFRC522.h>       // Pilote pour le lecteur RC522
+#include <WiFi.h>          // Gestion du WiFi 
+#include <PubSubClient.h>  // Client pour le protocole MQTT
+#include <ArduinoJson.h>   // Manipulation du format JSON
+#include <WebServer.h>     // Serveur Web 
+#include <ESPmDNS.h>       // Gerer les noms de domaine a partir des adresses IP
+#include "mbedtls/aes.h"   // Bibliothèque de chiffrement AES
 
 // WiFi
 const char* ssid     = "ESP32_RFID_AP";
@@ -496,3 +496,4 @@ void hexStringToByteArray(String hex, byte *byteArray) {
     byteArray[i / 2] = (byte) strtol(hexPair.c_str(), NULL, 16);
   }
 }
+
